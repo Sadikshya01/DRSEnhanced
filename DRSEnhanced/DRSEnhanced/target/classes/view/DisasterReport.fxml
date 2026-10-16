@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="590.0"
+            prefWidth="600.0"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.DisasterReportController">
+
+    <children>
+
+        <VBox spacing="6.0"
+              AnchorPane.topAnchor="10.0"
+              AnchorPane.leftAnchor="60.0"
+              AnchorPane.rightAnchor="60.0"
+              AnchorPane.bottomAnchor="10.0">
+
+            <padding>
+                <Insets top="5.0"
+                        right="10.0"
+                        bottom="5.0"
+                        left="10.0"/>
+            </padding>
+
+            <!-- Main heading -->
+            <Label text="DISASTER RESPONSE SYSTEM"
+                   style="-fx-font-size: 18px;
+                          -fx-font-weight: bold;"/>
+
+            <Label text="Report a Disaster"
+                   style="-fx-font-size: 15px;
+                          -fx-font-weight: bold;"/>
+
+            <!-- Disaster Type -->
+            <Label text="Disaster Type"/>
+
+            <ComboBox fx:id="disasterTypeCombo"
+                      promptText="Select Disaster Type"
+                      maxWidth="Infinity"/>
+
+            <!-- Location -->
+            <Label text="Location"/>
+
+            <TextField fx:id="locationField"
+                       promptText="Enter Location"/>
+
+            <!-- Severity -->
+            <Label text="Severity"/>
+
+            <ComboBox fx:id="severityCombo"
+                      promptText="Select Severity"
+                      maxWidth="Infinity"/>
+
+            <!-- Number of People Affected -->
+            <Label text="Number of People Affected"/>
+
+            <TextField fx:id="peopleAffectedField"
+                       promptText="Enter number of people affected"/>
+
+            <!-- Infrastructure Impact -->
+            <Label text="Infrastructure Impact"/>
+
+            <ComboBox fx:id="impactCombo"
+                      promptText="Select Impact"
+                      maxWidth="Infinity"/>
+
+            <!-- Description -->
+            <Label text="Description"/>
+
+            <TextArea fx:id="descriptionArea"
+                      promptText="Enter disaster description"
+                      prefHeight="55.0"
+                      prefRowCount="2"
+                      wrapText="true"/>
+
+            <!-- Buttons -->
+            <HBox spacing="8.0">
+
+                <Button text="Submit Report"
+                        onAction="#handleSubmit"/>
+
+                <Button text="Clear"
+                        onAction="#handleClear"/>
+
+                <Button text="Logout"
+                        onAction="#handleLogout"/>
+
+            </HBox>
+
+            <!-- Submission result -->
+            <Label fx:id="resultLabel"
+                   minHeight="35.0"
+                   wrapText="true"/>
+
+            <Separator/>
+
+            <!-- Creative Feature: Safety Advice -->
+            <Label text="Safety Advice"
+                   style="-fx-font-size: 13px;
+                          -fx-font-weight: bold;"/>
+
+            <Label fx:id="safetyAdviceLabel"
+                   minHeight="35.0"
+                   maxWidth="Infinity"
+                   wrapText="true"/>
+
+        </VBox>
+
+    </children>
+
+</AnchorPane>

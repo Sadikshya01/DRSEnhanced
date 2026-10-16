@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0"
+            prefWidth="1000.0"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.OfficerDashboardController">
+
+    <children>
+
+        <VBox spacing="15.0"
+              AnchorPane.topAnchor="20.0"
+              AnchorPane.leftAnchor="30.0"
+              AnchorPane.rightAnchor="30.0"
+              AnchorPane.bottomAnchor="20.0">
+
+            <padding>
+                <Insets top="10.0"
+                        right="10.0"
+                        bottom="10.0"
+                        left="10.0"/>
+            </padding>
+
+            <!-- Main Heading -->
+            <Label text="DISASTER RESPONSE SYSTEM"
+                   style="-fx-font-size: 21px;
+                          -fx-font-weight: bold;"/>
+
+            <Label text="Disaster Response Officer Dashboard"
+                   style="-fx-font-size: 16px;
+                          -fx-font-weight: bold;"/>
+
+            <!-- Disaster Report Table -->
+            <TableView fx:id="disasterTable"
+                       prefHeight="280.0">
+
+                <columns>
+
+                    <TableColumn fx:id="idColumn"
+                                 text="ID"
+                                 prefWidth="60.0"/>
+
+                    <TableColumn fx:id="typeColumn"
+                                 text="Type"
+                                 prefWidth="110.0"/>
+
+                    <TableColumn fx:id="locationColumn"
+                                 text="Location"
+                                 prefWidth="130.0"/>
+
+                    <TableColumn fx:id="severityColumn"
+                                 text="Severity"
+                                 prefWidth="80.0"/>
+
+                    <TableColumn fx:id="priorityColumn"
+                                 text="Priority"
+                                 prefWidth="100.0"/>
+
+                    <TableColumn fx:id="statusColumn"
+                                 text="Status"
+                                 prefWidth="110.0"/>
+
+                    <TableColumn fx:id="departmentColumn"
+                                 text="Assigned Department"
+                                 prefWidth="200.0"/>
+
+                </columns>
+
+            </TableView>
+
+            <!-- Assessment and Response Controls -->
+            <HBox spacing="15.0">
+
+                <VBox spacing="5.0">
+
+                    <Label text="Priority"/>
+
+                    <ComboBox fx:id="priorityCombo"
+                              prefWidth="170.0"/>
+
+                </VBox>
+
+                <VBox spacing="5.0">
+
+                    <Label text="Response Department"/>
+
+                    <ComboBox fx:id="departmentCombo"
+                              prefWidth="230.0"/>
+
+                </VBox>
+
+                <VBox spacing="5.0">
+
+                    <Label text="Response Status"/>
+
+                    <ComboBox fx:id="statusCombo"
+                              prefWidth="170.0"/>
+
+                </VBox>
+
+            </HBox>
+
+            <!-- Action Buttons -->
+            <HBox spacing="10.0">
+
+                <Button text="Assess Priority"
+                        onAction="#handleAssess"/>
+
+                <Button text="Recommend Department"
+                        onAction="#handleRecommend"/>
+
+                <Button text="Assign Department"
+                        onAction="#handleAssign"/>
+
+                <Button text="Update Status"
+                        onAction="#handleUpdateStatus"/>
+
+                <Button text="Logout"
+                        onAction="#handleLogout"/>
+
+            </HBox>
+
+            <!-- Messages -->
+            <Label fx:id="messageLabel"
+                   wrapText="true"
+                   minHeight="30.0"/>
+
+        </VBox>
+
+    </children>
+
+</AnchorPane>
